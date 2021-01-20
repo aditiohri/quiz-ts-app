@@ -25,7 +25,7 @@ const QuestionCard: React.FC<Props> = ({
     <div>
         {answers.map((answer, id) => (
             <div key={id}>
-                <button disabled={userAnswers ? true : false}>
+                <button disabled={userAnswers ? true : false} value={answer}>
                 <span>{answer}</span>
                 </button>
             </div>
