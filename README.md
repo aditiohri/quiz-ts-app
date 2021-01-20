@@ -1,4 +1,4 @@
-# Typescript React App 
+# Typescript, React & Webpack App 
 
 ## Installation:
 1. Clone repository
