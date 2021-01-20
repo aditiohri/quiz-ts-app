@@ -1,14 +1,14 @@
 {
-  "name": "ts-react-quiz",
+  "name": "react-ts-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "React webpack setup",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aditi Ohri",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^17.0.0",
