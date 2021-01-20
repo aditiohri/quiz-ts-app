@@ -59,7 +59,15 @@ export const App = () => {
       setUserAnswers((prevAnswer) => [...prevAnswer, answerObject]);
     }
   };
-  const nextQuestion = () => {};
+  const nextQuestion = () => {
+    // move onto the next question unless on the last question
+    const nextQuestion = number + 1;
+    if (nextQuestion === TOTAL_QUESTIONS) {
+      setGameOver(true);
+    } else {
+      setNumber(nextQuestion);
+    }
+  };
   return (
     <div>
       <h1>Quiz </h1>
@@ -76,13 +84,13 @@ export const App = () => {
           totalQuestions={TOTAL_QUESTIONS}
           question={questions[number].question}
           answers={questions[number].answers}
-          userAnswers={userAnswers ? userAnswers[number] : null}
+          userAnswer={userAnswers ? userAnswers[number] : undefined}
           callback={checkAnswer}
         />
       )}
       {!gameOver &&
       !loading &&
-      userAnswers.length !== number + 1 &&
+      userAnswers.length === number + 1 &&
       number !== TOTAL_QUESTIONS - 1 ? (
         <button className="next" onClick={nextQuestion}>
           Next Question
