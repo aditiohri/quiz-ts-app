@@ -9,7 +9,7 @@ import { QuestionState, Difficulty } from "./API";
 
 const { useState } = React;
 
-type AnswerObject = {
+export type AnswerObject = {
   question: string;
   answer: string;
   correct: boolean;
