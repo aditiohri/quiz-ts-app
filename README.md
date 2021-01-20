@@ -1,0 +1,1 @@
+typescript react app outline, created with guidance from [Blessing Krofegha](https://www.smashingmagazine.com/2020/05/typescript-modern-react-projects-webpack-babel/)
