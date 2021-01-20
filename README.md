@@ -4,5 +4,7 @@
 1. Change git origin!
 2. Change name etc
 3. Follow Quiz App tutorial
+4. Add favicon
+5. Update base TS react app
 
 Created with guidance from [Thomas Weibenfalk](https://www.youtube.com/watch?v=F2JCjVSZlG0)
