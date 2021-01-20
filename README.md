@@ -1,9 +1,8 @@
 # Typescript, React & Webpack App 
 
-## Installation:
-1. Clone repository
-2. Edit Name, Description and Author in package.json
-3.  Install dependencies: `$ npm i`
-4. Run application: `$ npm start`
+## TO DO:
+1. Change git origin!
+2. Change name etc
+3. Follow Quiz App
 
-Created with guidance from [Blessing Krofegha](https://www.smashingmagazine.com/2020/05/typescript-modern-react-projects-webpack-babel/)
+Created with guidance from [Thomas Weibenfalk](https://www.youtube.com/watch?v=F2JCjVSZlG0)
