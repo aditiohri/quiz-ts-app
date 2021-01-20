@@ -6,7 +6,7 @@ module.exports = {
   target: "web",
   mode: "development",
   output: {
-    path: path.resolve(\__dirname, "build"),
+    path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
   },
   resolve: {
@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
       new HtmlWebpackPlugin({
-          template: path.resolve(\__dirname, "src", "components", "index.html"),
+          template: path.resolve(__dirname, "src", "components", "index.html"),
       }),
       new MiniCssExtractPlugin({
           filename: "./src/yourfile.css"
