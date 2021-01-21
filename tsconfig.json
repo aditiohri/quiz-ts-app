@@ -1,15 +1,25 @@
 {
-    "compilerOptions": {
-        "jsx": "react",
-        "module": "CommonJS",
-        "noImplicitAny": true,
-        "outDir": "./build/",
-        "preserveConstEnums": true,
-        "removeComments": true,
-        "sourceMap": true,
-        "target": "ES2015"
-    },
-    "include": [
-        "src/index.tsx"
-    ]
+  "compileOnSave": true,
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "commonJS",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "baseUrl": "./src",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ES6",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "typeRoots": ["node_modules/@types", "src/typings"],
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2016", "dom"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

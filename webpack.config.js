@@ -6,7 +6,7 @@ module.exports = {
   target: "web",
   mode: "development",
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
   resolve: {
@@ -27,14 +27,26 @@ module.exports = {
         test: /\.css$/,
         loader: "css-loader",
       },
+      {
+        test: /\.html/,
+        use: ["html-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    port: 8888,
+  },
   plugins: [
-      new HtmlWebpackPlugin({
-          template: path.resolve(__dirname, "src", "index.html"),
-      }),
-      new MiniCssExtractPlugin({
-          filename: "./src/yourfile.css"
-      })
-  ]
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html"),
+    }),
+    new MiniCssExtractPlugin({
+      filename: "./src/yourfile.css",
+    }),
+  ],
 };
