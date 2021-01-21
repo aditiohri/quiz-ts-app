@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
         justify-content: center;
         background-image: url(${BGImage});
         background-size: cover;
-        color: white;
     }
 
     * {
@@ -31,16 +30,17 @@ export const Wrapper = styled.div`
   align-items: center;
 
   > p {
-    color: black;
+    color: #fff;
   }
 
   .score {
-    color: black;
+    color: #eee;
     font-size: 2rem;
     margin: 0;
   }
 
   h1 {
+    color: #fff;
     font-family: "Work Sans";
     background-image: linear-gradient(180deg, #eee, #87f1ff);
     background-size: 100%;
