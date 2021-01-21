@@ -6,5 +6,6 @@
 3. Are there are any places where interfaces are more appropriate?
 4. Update base TS react app with assets + entry point at root of src/
 5. Add loading spinners
+6. Why won't the local image load without the @ts-ignore tag?
 
 Created with guidance from [Thomas Weibenfalk](https://www.youtube.com/watch?v=F2JCjVSZlG0)

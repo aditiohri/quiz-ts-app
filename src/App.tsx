@@ -3,9 +3,10 @@ import { fetchQuizQuestions } from "./API";
 
 // Components
 import QuestionCard from "./components/QuestionCard";
-
 //Types
 import { QuestionState, Difficulty } from "./API";
+// Styles
+import { GlobalStyle } from './App.styles'
 
 const { useState } = React;
 
@@ -70,6 +71,7 @@ export const App = () => {
   };
   return (
     <div>
+      <GlobalStyle />
       <h1>Quiz </h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startTrivia}>
