@@ -1,21 +1,13 @@
 import * as React from "react";
-import { fetchQuizQuestions } from "./API";
 
-// Components
+import { fetchQuizQuestions } from "./API";
+import { AnswerObject, QuestionState } from "./types/type";
+import { Difficulty } from "./types/enum";
+
 import QuestionCard from "./components/QuestionCard";
-//Types
-import { QuestionState, Difficulty } from "./API";
-// Styles
-import { GlobalStyle, Wrapper } from './App.styles'
+import { GlobalStyle, Wrapper } from "./App.styles";
 
 const { useState } = React;
-
-export type AnswerObject = {
-  question: string;
-  answer: string;
-  correct: boolean;
-  correctAnswer: string;
-};
 
 const TOTAL_QUESTIONS = 10;
 
