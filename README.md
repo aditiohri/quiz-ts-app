@@ -1,4 +1,4 @@
-# Quiz App
+# [Quiz App](https://quirky-yalow-460c46.netlify.app/)
 
 A simple quiz App built with TypeScript, React, Styled Components and the [Open Trivia API](https://opentdb.com/).
 
