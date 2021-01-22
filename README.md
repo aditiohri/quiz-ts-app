@@ -1,9 +1,10 @@
 # Quiz App
 
-## TO DO:
+A simple quiz App built with TypeScript, React, Styled Components and the [Open Trivia API](https://opentdb.com/).
 
-- Review [best practices](https://www.sitepoint.com/react-with-typescript-best-practices/)
-- Update base TS react app with assets + entry point at root of src/
-- Add loading spinners
+## FUTURE ENHANCEMENTS:
+
+- Allow user to choose difficulty of quiz
 - Issue with local image not loading without //@ts-ignore
-- Issue with parser not accessing types appropriately
+- Issue with parser not accessing types appropriately --- I will need to create a separate component that touches the DOM directly I think
+- Review [best practices](https://www.sitepoint.com/react-with-typescript-best-practices/)

@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "skipLibCheck": true,
+    "skipLibCheck": true, // this allows me to use the parse utility from html-react-parser, but is a temporary workaround
     "jsx": "react",
     "module": "commonJS",
     "noImplicitAny": true,
@@ -16,7 +16,7 @@
     "moduleResolution": "node",
     "strict": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
+    // "isolatedModules": true,
     "typeRoots": ["node_modules/@types", "src/types/*"],
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2015"],

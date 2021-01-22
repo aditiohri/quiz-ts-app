@@ -2,11 +2,12 @@ import * as React from "react";
 import { Props } from "../types/type";
 import { Wrapper, ButtonWrapper } from "./QuestionCard.styles";
 import parse, { HTMLReactParserOptions, attributesToProps } from "html-react-parser";
-// import { Element } from "domhandler/lib/node";
+import { Element } from "domhandler/lib/node";
 
 const options: HTMLReactParserOptions = {
   replace: (domNode) => {
     if (
+      domNode instanceof Element &&
       //@ts-ignore
       domNode.attribs &&
       //@ts-ignore
