@@ -1,10 +1,23 @@
 import * as React from "react";
-//styles
+import { Props } from "../types/type";
 import { Wrapper, ButtonWrapper } from "./QuestionCard.styles";
-// types
-import { AnswerObject, Props } from "../types/type";
+import parse, { HTMLReactParserOptions, attributesToProps } from "html-react-parser";
+// import { Element } from "domhandler/lib/node";
 
-
+const options: HTMLReactParserOptions = {
+  replace: (domNode) => {
+    if (
+      //@ts-ignore
+      domNode.attribs &&
+      //@ts-ignore
+      domNode.attribs.class === "remove"
+      ) {
+      //@ts-ignore
+      const props = attributesToProps(domNode.attribs);
+      return <div {...props} />;
+    }
+  },
+};
 
 const QuestionCard: React.FC<Props> = ({
   question,
@@ -18,8 +31,8 @@ const QuestionCard: React.FC<Props> = ({
     <p className="number">
       Question: {questionNum} / {totalQuestions}
     </p>
-    <p>{question}</p>
-    <div>
+    <p>{parse(question, options)}</p>
+    <div className="answers">
       {answers.map((answer, id) => (
         <ButtonWrapper
           correct={userAnswer?.correctAnswer === answer}
@@ -31,7 +44,7 @@ const QuestionCard: React.FC<Props> = ({
             value={answer}
             onClick={callback}
           >
-            <span>{answer}</span>
+            <span>{parse(answer, options)}</span>
           </button>
         </ButtonWrapper>
       ))}

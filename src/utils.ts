@@ -1,2 +1,2 @@
-export const shuffleArray = (array: any[]) =>
+export const shuffleArray = (array: string[]) =>
   [...array].sort(() => Math.random() - 0.5);

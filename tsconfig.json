@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "skipLibCheck": true,
     "jsx": "react",
     "module": "commonJS",
     "noImplicitAny": true,
@@ -18,7 +19,7 @@
     "isolatedModules": true,
     "typeRoots": ["node_modules/@types", "src/types/*"],
     "allowSyntheticDefaultImports": true,
-    "lib": ["es2016", "dom"]
+    "lib": ["dom", "es2015"],
   },
   "include": ["src/**/*", "react-app-env.d.ts"],
   "exclude": ["node_modules"],

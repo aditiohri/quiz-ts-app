@@ -1,11 +1,9 @@
 # Quiz App
 
 ## TO DO:
-1. Review [best practices](https://www.sitepoint.com/react-with-typescript-best-practices/)
-2. Refactor types etc into modules
-3. Are there are any places where interfaces are more appropriate?
-4. Update base TS react app with assets + entry point at root of src/
-5. Add loading spinners
-6. Why won't the local image load without the @ts-ignore tag?
 
-Created with guidance from [Thomas Weibenfalk](https://www.youtube.com/watch?v=F2JCjVSZlG0)
+- Review [best practices](https://www.sitepoint.com/react-with-typescript-best-practices/)
+- Update base TS react app with assets + entry point at root of src/
+- Add loading spinners
+- Issue with local image not loading without //@ts-ignore
+- Issue with parser not accessing types appropriately

@@ -27,7 +27,9 @@ export const GlobalStyle = createGlobalStyle`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
+  height: 100vh;
 
   > p {
     color: #fff;
