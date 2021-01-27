@@ -21,10 +21,25 @@ export const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  const setQuizDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) =>{
-    const level: Difficulty = e.currentTarget.value;
+  const setQuizDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    let level: Difficulty;
+    const value: string = e.currentTarget.value;
+    switch (value) {
+      case Difficulty.EASY:
+        level = Difficulty.EASY;
+        break;
+      case Difficulty.HARD:
+        level = Difficulty.HARD;
+        break;
+      case Difficulty.MEDIUM:
+        level = Difficulty.MEDIUM;
+        break;
+      default:
+        level = Difficulty.EASY;
+    }
     setDifficulty(level);
-}
+  };
+
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
@@ -72,14 +87,22 @@ export const App = () => {
       <GlobalStyle />
       <h1>Quiz </h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <>
-          <button className="start" onClick={startTrivia}>
+        <form onSubmit={startTrivia}>
+          <DropdownInput
+            setQuizDifficulty={setQuizDifficulty}
+            difficulty={difficulty}
+          />
+          <button type="submit" className="start">
             Start
           </button>
-          <DropdownInput setQuizDifficulty={setQuizDifficulty}/>
+        </form>
+      ) : null}
+      {!gameOver ? (
+        <>
+          <p className="score">Score: {score}</p>
+          <p>Difficulty: {difficulty}</p>
         </>
       ) : null}
-      {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading && <p>Loading Questions ... </p>}
       {!loading && !gameOver && (
         <QuestionCard
