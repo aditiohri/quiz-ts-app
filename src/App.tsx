@@ -2,11 +2,11 @@ import * as React from "react";
 
 import { fetchQuizQuestions } from "./API";
 import { AnswerObject, QuestionState } from "./types/type";
-import { Difficulty } from "./types/enum";
 
 import QuestionCard from "./components/QuestionCard";
 import { GlobalStyle, Wrapper } from "./App.styles";
 import DropdownInput from "./components/DropdownInput";
+import { Difficulty } from "./types/enum";
 
 const { useState } = React;
 
@@ -21,6 +21,10 @@ export const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
+  const setQuizDifficulty = (e: React.ChangeEvent<HTMLSelectElement>) =>{
+    const level: Difficulty = e.currentTarget.value;
+    setDifficulty(level);
+}
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
@@ -68,13 +72,15 @@ export const App = () => {
       <GlobalStyle />
       <h1>Quiz </h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startTrivia}>
-          Start
-        </button>
+        <>
+          <button className="start" onClick={startTrivia}>
+            Start
+          </button>
+          <DropdownInput setQuizDifficulty={setQuizDifficulty}/>
+        </>
       ) : null}
       {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading && <p>Loading Questions ... </p>}
-      <DropdownInput />
       {!loading && !gameOver && (
         <QuestionCard
           questionNum={number + 1}

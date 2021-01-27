@@ -14,6 +14,10 @@ export  type Props = {
     totalQuestions: number;
   };
 
+export type InputProps = {
+  setQuizDifficulty: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
 
 export type Question = {
     category: string;
