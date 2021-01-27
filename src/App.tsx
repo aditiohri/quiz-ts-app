@@ -13,6 +13,7 @@ const { useState } = React;
 const TOTAL_QUESTIONS = 10;
 
 export const App = () => {
+  const [difficulty, setDifficulty] = useState<Difficulty>(Difficulty.EASY);
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [number, setNumber] = useState(0);
@@ -26,7 +27,7 @@ export const App = () => {
 
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.EASY
+      difficulty
     ).catch((error) => console.error);
     setQuestions(newQuestions);
     setScore(0);
