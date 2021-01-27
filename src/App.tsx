@@ -6,6 +6,7 @@ import { Difficulty } from "./types/enum";
 
 import QuestionCard from "./components/QuestionCard";
 import { GlobalStyle, Wrapper } from "./App.styles";
+import DropdownInput from "./components/DropdownInput";
 
 const { useState } = React;
 
@@ -72,6 +73,7 @@ export const App = () => {
       ) : null}
       {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading && <p>Loading Questions ... </p>}
+      <DropdownInput />
       {!loading && !gameOver && (
         <QuestionCard
           questionNum={number + 1}
