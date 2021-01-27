@@ -6,10 +6,13 @@ import { InputProps } from "../types/type";
 // level and label properties
 let difficultyOptions = [Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD];
 
-const DropdownInput: React.FC<InputProps> = ({ setQuizDifficulty }) => {
+const DropdownInput: React.FC<InputProps> = ({
+  setQuizDifficulty,
+  difficulty,
+}) => {
   return (
     <div>
-      <select onChange={(e) => setQuizDifficulty(e)}>
+      <select onChange={(e) => setQuizDifficulty(e)} value={difficulty}>
         {difficultyOptions.map((item, id) => (
           <option key={Math.random() * id + 1} value={item}>
             {item}

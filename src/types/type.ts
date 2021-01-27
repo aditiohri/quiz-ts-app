@@ -1,3 +1,5 @@
+import { Difficulty } from "./enum";
+
 export type AnswerObject = {
     question: string;
     answer: string;
@@ -16,6 +18,7 @@ export  type Props = {
 
 export type InputProps = {
   setQuizDifficulty: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  difficulty: Difficulty;
 }
 
 
